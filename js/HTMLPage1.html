@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+    function show_parts()
+    {
+        var parts = "Anchors: " + document.anchors.length;
+        parts+= "\n1st Anchor name: " + document.anchors[0].name;
+		parts+= "\n2nd anchor name: " + document.anchors[1].name;
+        parts+="\nForms: " + document.forms.length;
+        parts+="\n1st form id: " + document.forms[0].id;
+        parts+="\nImages: " + document.images.length;
+        parts+="\n1st image id: " + document.images[0].id;
+        parts+="\n2nd image id: " + document.images[1].id;
+        parts+="\nLinks: " + document.links.length;
+        parts+="\n1st link name: " + document.links[0].name;
+        parts+="\n2nd lonk name: " + document.links[1].name;
+        alert(parts);
+    }
+	function show_attribs()
+	{
+		if(!window.document.getElementById)
+		{
+			alert("Not W3C DOM browser!");
+			return;
+		}
+		
+		var attribs="";
+		attribs+="Link name: " + window.document.getElementById("engine-1").name;
+		attribs+="\nTarget: " + window.document.getElementById("engine-1").href;
+		alert(attribs);
+		
+	}
+    </script>
+    
+</head>
+<body>
+    <a name="top_of_page " id = "fragment">Select a search engine...</a>
+    <a href="http://www.google.com" name="google_link">
+        <img src="google.gif" id="engine-1" alt="google_graphic">
+    </a>
+    <a href="www.yahoo.com" name="yahoo_link">
+        <img src="yahoo.gif" id="engine-2" alt="yahoo_graphic">
+    </a>
+    <form id ="form-1" action="">
+        <p> <input type="button" value="Click Me" onclick="show_parts()"/></p>
+    </form>
+</body>
+</html>
